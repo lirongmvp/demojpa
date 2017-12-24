@@ -26,16 +26,19 @@ public class JsonTest {
                 "    ]\n" +
                 "}";
 
-        JSONObject jsonObject = JSONObject.parseObject(json);
-        String name = jsonObject.getString("name");
-        String age = jsonObject.getString("age");
-        System.out.printf("name:" + name + "age:" + age);
-        JSONArray jsonArray = jsonObject.getJSONArray("list");
-        for (int i = 0; i < jsonArray.size(); i++) {
-            JSONObject list = jsonArray.getJSONObject(i);
-            String  nameList = list.getString("name");
-            String ageList = list.getString("age");
-            System.out.printf("nameList:" + nameList + "ageList:" + ageList);
-        }
+//        JSONObject jsonObject = JSONObject.parseObject(json);
+//        String name = jsonObject.getString("name");
+//        String age = jsonObject.getString("age");
+//        System.out.printf("name:" + name + "age:" + age);
+//        JSONArray jsonArray = jsonObject.getJSONArray("list");
+//        for (int i = 0; i < jsonArray.size(); i++) {
+//            JSONObject list = jsonArray.getJSONObject(i);
+//            String  nameList = list.getString("name");
+//            String ageList = list.getString("age");
+//            System.out.printf("nameList:" + nameList + "ageList:" + ageList);
+//        }
+        //json转化成对象
+        User user =JSONObject.parseObject(json,User.class);
+        System.out.printf(user.toString());
     }
 }
