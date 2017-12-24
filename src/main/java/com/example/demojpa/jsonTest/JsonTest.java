@@ -37,8 +37,12 @@ public class JsonTest {
 //            String ageList = list.getString("age");
 //            System.out.printf("nameList:" + nameList + "ageList:" + ageList);
 //        }
-        //json转化成对象
-        User user =JSONObject.parseObject(json,User.class);
+        //json字符串转化成对象
+        User user = JSONObject.parseObject(json, User.class);
         System.out.printf(user.toString());
+        //对象转化成json字符串
+        String jsonstring = JSONObject.toJSONString(user);
+        System.out.printf(jsonstring);
+
     }
 }
